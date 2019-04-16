@@ -110,12 +110,42 @@ $(function(){
 			window.location = 'index.php?category='+$(this).val();
 		}
 		
-	});
+  $('#select_category').change(function(){
+    var value = $(this).val();
+    if(value == 0){
+      window.location = 'article.php';
+    }
+    else{
+      window.location = 'article.php?category='+value;
+    }
+  });
+
+  $(document).on('click', '.edit', function(e){
+    e.preventDefault();
+    $('#edit').modal('show');
+    var id = $(this).data('id');
+    getRow(id);
+  });
+
+  $(document).on('click', '.edit', function(e){
+    e.preventDefault();
+    $('#delete').modal('show');
+    var id = $(this).data('id');
+    getRow(id);
+  });
+   $(document).on('click', '.photo', function(e){
+    e.preventDefault();
+    var id = $(this).data('id');
+    getRow(id);
+  });
+
 });
+
+
 function getRow(id){
   $.ajax({
     type: 'POST',
-    url: 'articule_row.php',
+    url: 'article_row.php',
     data: {id:id},
     dataType: 'json',
     success: function(response){
@@ -125,7 +155,7 @@ function getRow(id){
       $('#edit_author').val(response.author);
       $('#edit_publisher').val(response.publisher);
       $('#datepicker_edit').val(response.publish_date);
-      $('#del_book').html(response.title);
+      $('#del_article').html(response.title);
     }
   });
 </script>
