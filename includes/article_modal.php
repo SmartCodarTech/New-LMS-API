@@ -54,10 +54,18 @@
 
                     <div class="col-sm-9">
                       <div class="date">
-                        <input type="text" class="form-control" id="datepicker_add" name="pub_date">
+                        <input type="text" class="form-control" id="datepicker_add" name="publish_date">
                       </div>
                     </div>
+                  </div>
+                    <div class="form-group">
+                    <label for="publisher" class="col-sm-3 control-label">Add a Link</label>
+
+                    <div class="col-sm-9">
+                      <input type="text" class="form-control" id="link" name="link">
+                    </div>
                 </div>
+              
                 <div class="form-group">
                     <label for="photo" class="col-sm-3 control-label">Upload File</label>
 

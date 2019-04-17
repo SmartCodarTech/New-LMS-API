@@ -4,19 +4,21 @@
 	if(isset($_POST['submit'])){
 		$title = $_POST['title'];
 		$category_id = $_POST['category_id'];
-		$student_id = $_POST['student_id'];
+	
 		$author = $_POST['author'];
 		$publisher = $_POST['publisher'];
+		$link = $_POST['link'];
 		$publish_date = $_POST['publish_date'];
 	
-        $sql = "SELECT * FROM students WHERE student_id = '$student'";
+        $student_id = $_GET['id'];
+		$sql = "SELECT * FROM students WHERE id = '$student_id'";
 		$query = $conn->query($sql);
-		if($query->num_rows < 1){
-			if(!isset($_SESSION['error'])){
-				$_SESSION['error'] = array();
-			}
-			$_SESSION['error'][] = 'Student not found';
+		if($query->num_rows > 0){
+			$row = $query->fetch_assoc();
+			$_SESSION['id'] = $row['student_id'];
+			
 		}
+		
                        
 	
 
@@ -39,12 +41,12 @@
 									}
 									else
 									{
-										move_uploaded_file($temp,"file/".$file);
+										move_uploaded_file($temp,"file/".$upload_file);
 								
 								
 									
 
-		$sql = "INSERT INTO article (title,category_id,student_id, author, publisher, publish_date,upload_file) VALUES ('$title','$category_id', '$student_id','$author', '$publisher', '$pub_date','$upload_file')";
+		$sql = "INSERT INTO article (title,category_id,student_id, author, publisher, publish_date,link,upload_file) VALUES ('$title','$category_id', '$student_id','$author', '$publisher', '$publish_date','$link','$upload_file')";
 	}}
 
 		if($conn->query($sql)){  
