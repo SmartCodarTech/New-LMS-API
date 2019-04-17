@@ -18,7 +18,7 @@
 	      <!-- Main content -->
 	      <section class="content">
 	        <div class="row">
-	        	<div class="col-sm-8 col-sm-offset-2">
+	        	<div class="col-sm-10 col-sm-offset-0">
 	        		<?php
 	        			if(isset($_SESSION['error'])){
 	        				echo "
@@ -50,7 +50,9 @@
 			        				<th>Category</th>
 			        				<th>Author</th>
 			        				<th>Publisher</th>
+			        				<!--th>Download Link</th-->
 			        				<th>Date</th>
+			        				<th>Added By</th>
 			        				<th>Tools</th>
 			        			</thead>
 			        			<tbody>
@@ -74,7 +76,10 @@
 			        							<td>".$row['name']."</td>
 			        							<td>".$row['author']."</td>
 			        							<td>".$row['publisher']."</td>
+
 			        							<td>".$row['publish_date']."</td>
+			        							
+			        							<td>".$row['student_id']."</td>
 			        							<td>
                             <button class='btn btn-success btn-sm edit btn-flat' data-id='".$row['articleid']."'><i class='fa fa-download'></i> </button>
                             <button class='btn btn-danger btn-sm delete btn-flat' data-id='".$row['articleid']."'><i class='fa fa-book'></i> </button>
