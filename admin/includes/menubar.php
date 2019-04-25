@@ -40,6 +40,7 @@
         <ul class="treeview-menu">
           <li><a href="book.php"><i class="fa fa-circle-o"></i> Book List</a></li>
           <li><a href="category.php"><i class="fa fa-circle-o"></i> Category</a></li>
+          <li><a href="article.php"><i class="fa fa-book"></i> Article</a></li>
         </ul>
       </li>
       <li class="treeview">
@@ -53,6 +54,7 @@
         <ul class="treeview-menu">
           <li><a href="student.php"><i class="fa fa-circle-o"></i> Users List</a></li>
           <li><a href="course.php"><i class="fa fa-circle-o"></i> Course</a></li>
+
         </ul>
       </li>
       <li class="treeview">
